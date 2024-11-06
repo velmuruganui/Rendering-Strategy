@@ -1,9 +1,11 @@
 'use client';
 import { useState, useEffect } from 'react';
+import TimeDisplay from './TimeDisplay';
 
 export default function ClientPost() {
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [renderTime, setRenderTime] = useState(null);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -11,6 +13,7 @@ export default function ClientPost() {
       const data = await res.json();
       setPost(data);
       setLoading(false);
+      setRenderTime(new Date().toISOString());
     };
     fetchPost();
   }, []);
@@ -22,6 +25,12 @@ export default function ClientPost() {
       <h2 className="mb-2 text-2xl font-bold">{post?.title}</h2>
       <p className="mb-2 text-gray-600">{post?.body}</p>
       <p className="text-sm text-violet-500">Rendered using Client-Side Rendering</p>
+      {renderTime && (
+        <TimeDisplay 
+          timestamp={renderTime} 
+          label="Rendered at:"
+        />
+      )}
     </div>
   );
 }
