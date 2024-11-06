@@ -12,18 +12,63 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <nav>
-          <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/csr">Client-Side Rendering</Link></li>
-            <li><Link href="/ssr">Server-Side Rendering</Link></li>
-            <li><Link href="/ssg">Static Site Generation</Link></li>
-            <li><Link href="/isr">Incremental Static Regeneration</Link></li>
+    <body className={inter.className}>
+      <div className="flex min-h-screen">
+        {/* Left Sidebar */}
+        <nav className="w-64 p-4 border-r border-gray-200 bg-gray-50">
+          <h3 className="mb-4 text-lg font-semibold text-gray-700">
+            Rendering Strategies
+          </h3>
+          <ul className="space-y-2">
+            <li>
+              <Link 
+                href="/" 
+                className="text-gray-600 transition-colors hover:text-blue-600"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/csr" 
+                className="text-gray-600 transition-colors hover:text-blue-600"
+              >
+                Client-Side Rendering
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/ssr" 
+                className="text-gray-600 transition-colors hover:text-blue-600"
+              >
+                Server-Side Rendering
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/ssg" 
+                className="text-gray-600 transition-colors hover:text-blue-600"
+              >
+                Static Site Generation
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/isr" 
+                className="text-gray-600 transition-colors hover:text-blue-600"
+              >
+                Incremental Static Regeneration
+              </Link>
+            </li>
           </ul>
         </nav>
-        {children}
-      </body>
-    </html>
+
+        {/* Main Content */}
+        <main className="flex-1 p-8 bg-white">
+          {children}
+        </main>
+      </div>
+    </body>
+  </html>
   );
 }
