@@ -20,6 +20,6 @@ export default function IncrementalPost({ post, lastRevalidated }) {
         lastRevalidated={lastRevalidated}
         revalidateInterval={60} // Match your revalidate setting
       />
-    </div>
+    </div> 
   );
 }

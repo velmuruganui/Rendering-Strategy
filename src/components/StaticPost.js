@@ -18,6 +18,6 @@ export default function StaticPost({ post }) {
         type="ssg"
         buildTime={buildTime}
       />
-    </div>
+    </div> 
   );
 }
