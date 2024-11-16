@@ -12,7 +12,7 @@ export default async function StaticPage() {
   
   return (
     <div>
-      <h1>Static Site Generation Example</h1>
+      <h1>Static Site Generation</h1>
       <StaticPost post={post} />
     </div>
   );

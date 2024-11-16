@@ -13,7 +13,7 @@ export default async function ServerPage() {
   
   return (
     <div>
-      <h1>Server-Side Rendering Example</h1>
+      <h1>Server-Side Rendering</h1>
       <ServerPost post={post} />
     </div>
   );

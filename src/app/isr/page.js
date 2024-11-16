@@ -12,7 +12,7 @@ export default async function IncrementalPage() {
   
   return (
     <div>
-      <h1>Incremental Static Regeneration Example</h1>
+      <h1>Incremental Static Regeneration</h1>
       <IncrementalPost 
         post={post} 
         lastRevalidated={new Date().toISOString()} 
